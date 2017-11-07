@@ -15,10 +15,37 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     ListView lst;
     String[] months={"11/10/17: Car Payment $150.00","11/15/17: Phone Bill $80.00","11/29/17: Internet Bill $30.00"};
+    BarGraph barGraph;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        barGraph = (BarGraph) findViewByID(R.id.barGraph);
+
+        ArrayList<BarEntry> barEntries = new ArrayList<>();
+        barEntries.add(new NewEntry(44f, 0));
+        barEntries.add(new NewEntry(54f, 1));
+        barEntries.add(new NewEntry(64f, 2));
+        barEntries.add(new NewEntry(74f, 3));
+        barEntries.add(new NewEntry(84f, 4));
+        barEntries.add(new NewEntry(94f, 5));
+        BarDataSet barDataSet = new BarDataSet(barEntries, "Dates");
+
+        ArrayList<String> theDates = new ArrayList<>();
+        theDates.add("August");
+        theDates.add("September");
+        theDates.add("October");
+        theDates.add("November");
+        theDates.add("December");
+
+        BarData theData = new BarData(theDates,barEntries);
+        barGraph.setData(theData);
+
+        barGraph.setTouchEnabled(true);
+        barGraph.setDragEnabled(true);
+        barGraph.setScaleEnabled(true);
+
 
         Button buttonMMGoToBS = (Button)findViewById(R.id.buttonMMGoToBS);
         Button buttonMMGoToCV = (Button)findViewById(R.id.buttonMMGoToCV);

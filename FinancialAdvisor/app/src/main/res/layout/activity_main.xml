@@ -10,6 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="team_18.financialadvisor.MainActivity">
 
+
     <TextView
         android:id="@+id/MMTextViewCurrentBudgetLabel"
         android:layout_width="match_parent"
@@ -115,4 +116,10 @@
         android:layout_below="@+id/MMTextViewUpcomingBillsLabel"
         android:layout_above="@+id/button2">
     </ListView>
+
+    <com.github.team_18production.graphing.graph.BarGraph>
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:id="@+id/bargraph">
+    </com.github.team_18production.graphing.graph.BarGraph>
 </RelativeLayout>
