@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="MMButtonGVGoToMM" type="id">buttongo</item>
+    <item name="buttonGVGoToCV" type="id">btn</item>
+    <item name="buttonGVGoToBS" type="id">btnpress</item>
+</resources>
